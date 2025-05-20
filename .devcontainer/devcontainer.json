@@ -1,0 +1,33 @@
+{
+    "name": "Java7 Tomcat7",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "web",
+    "forwardPorts": [8080, 5432],
+    "features": {
+      "ghcr.io/devcontainers/features/common-utils:2": {
+        "installZsh": true,
+        "installOhMyZsh": true,
+        "installOhMyZshConfig": true,
+        "configureZshAsDefaultShell": true
+      }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "saoudrizwan.claude-dev" // Cline
+            ],
+            "settings": {
+                "java.jdt.ls.java.home": "/opt/java/jdk7",
+                "java.configuration.runtimes": [
+                    {
+                        "name": "JavaSE-1.7",
+                        "path": "/opt/java/jdk7"
+                    }
+                ]
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "workspaceFolder": "/workspace"
+}
